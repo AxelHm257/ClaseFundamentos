@@ -2,17 +2,20 @@ import java.util.Scanner;
 
 public class Ejercicio7 {
     public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
 
-        Scanner sc = new Scanner(System.in);
+        String espacio=" ", asterisco="*";
+        int pisos=0;
 
-        System.out.println("Ingrese el numero de filas");
-        int f = sc.nextInt();
+        System.out.println("Nivel de la piramide: ");
+        pisos=scanner.nextInt();
 
-        for (int i = 1; i <= f; i++) {
-            for (int j = 0; j < i; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
+        for (int i=1; i<=pisos; i++) {
+            for(int espacios=pisos-i; espacios>0; espacios--)
+                System.out.print(espacio);
+            for(int lineas=1; lineas<2*i; lineas++)
+                System.out.print(asterisco);
+            System.out.println("");
         }
     }
 }
